@@ -50,7 +50,7 @@ const MovieList = () => {
     }
   };
 
-  const generateCategoryId = (category, currentMaxId) => {
+  const generateCategoryId = (category) => {
     let categoryCode = '';
   
     switch (category) {
@@ -199,7 +199,7 @@ const MovieList = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg w-96">
             <h2 className="text-xl font-bold mb-4">🎉 Thêm phim mới</h2>
-            <input type="text" name="id" readOnly className="w-full border p-2 mb-2 bg-gray-100"/>
+            <input type="text" name="id" value={formData.id} readOnly className="w-full border p-2 mb-2 bg-gray-100"/>
             <input type="text" name="name" onChange={handleChange} placeholder="Tên phim" className="w-full border p-2 mb-2" />
             <select name="category" onChange={handleChange} className="w-full border p-2 mb-2">
               <option value="">Chọn thể loại</option>
