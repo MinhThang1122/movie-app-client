@@ -35,6 +35,7 @@ const MovieList = () => {
       date: movie.date,
       description: movie.description,
       image: movie.image,
+      language: movie.language,
       id: movie.id,
     });
   };
@@ -86,6 +87,7 @@ const MovieList = () => {
       formDataToSend.append("category", formData.category);
       formDataToSend.append("date", formData.date);
       formDataToSend.append("description", formData.description);
+      formDataToSend.append("language", formData.language);
       formDataToSend.append("id", formData.id);
 
       if (formData.image instanceof File) {
@@ -113,6 +115,7 @@ const MovieList = () => {
       formDataToSend.append("category", formData.category);
       formDataToSend.append("date", formData.date);
       formDataToSend.append("description", formData.description);
+      formDataToSend.append("language", formData.language);
       formDataToSend.append("id", formData.id);
 
       if (formData.image instanceof File) {
@@ -163,6 +166,7 @@ const MovieList = () => {
             <p className="text-gray-600 text-sm">{movie.category}</p>
             <p className="text-gray-500 text-sm">{movie.date}</p>
             <p className="text-gray-700 mt-2 text-sm">{movie.description}</p>
+            <p className="text-gray-700 mt-2 text-sm">Language: {movie.language}</p>
             <button onClick={() => handleEditClick(movie)} className="bg-blue-500 text-white px-4 py-2 rounded mt-2">
               ✏️ Sửa
             </button>
@@ -184,6 +188,8 @@ const MovieList = () => {
             <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full border p-2 mb-2" />
             <input type="text" name="category" value={formData.category} onChange={handleChange} className="w-full border p-2 mb-2" />
             <textarea name="description" value={formData.description} onChange={handleChange} className="w-full border p-2 mb-2" />
+            <input type="date" name="date" value={formData.date} onChange={handleChange} className="w-full border p-2 mb-2" />
+            <input type="text" name="language" value={formData.language} onChange={handleChange} className="w-full border p-2 mb-2" />
             <input type="file" name="image" onChange={handleChange} className="w-full border p-2 mb-2" />
             <button onClick={handleUpdateMovie} className="bg-green-500 text-white px-4 py-2 rounded mr-2">
               ✅ Cập nhật
@@ -210,6 +216,7 @@ const MovieList = () => {
             </select>
             <input type="date" name="date" onChange={handleChange} className="w-full border p-2 mb-2" />
             <textarea name="description" onChange={handleChange} placeholder="Mô tả" className="w-full border p-2 mb-2" />
+            <input type="text" name="language" onChange={handleChange} placeholder="Ngôn ngữ" className="w-full border p-2 mb-2" />
             <input type="file" name="image" onChange={handleChange} className="w-full border p-2 mb-2" />
             <div className="flex justify-between">
               <button onClick={handleAddMovie} className="bg-green-500 text-white px-4 py-2 rounded">
